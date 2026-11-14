@@ -36,6 +36,19 @@ go test -v -count=1 ./...
 4. `exercises/practice/hello-world/hello_world_test.go`
    - Maintained Go test file containing `TestHelloWorld` and `BenchmarkHelloWorld`.
 
+## Source of the Cases & Comments
+
+The canonical test case is defined in `problem-specifications/exercises/hello-world/canonical-data.json` under UUID `af9ffe10-dc13-42d8-a742-e7bdafac449d` (`"Say Hi!"`).
+
+As stated in the track configuration guidelines, regular comments in `tests.toml` are discarded during regeneration, *so comments can be added in a "comment" key.* In `exercises/practice/hello-world/.meta/tests.toml`, the rationale is explicitly preserved via:
+```toml
+[af9ffe10-dc13-42d8-a742-e7bdafac449d]
+description = "Say Hi!"
+comment = "Implemented in hello_world_test.go as TestHelloWorld; verifies HelloWorld() == 'Hello, World!'. Hand-maintained test suite without .meta/gen.go."
+```
+
+The three test aspects for `hello-world` (canonical unit test `TestHelloWorld`, performance benchmark `BenchmarkHelloWorld`, and preserved metadata comments in a `"comment"` key) are reproduced by running `./bin/configlet sync --tests include --exercise hello-world --update --yes --offline` and `go test -v -count=1 ./...`.
+
 ## Case-to-Output Mapping
 
 | UUID | Canonical Description | Property | Output Test Function | Source / Route | Status |

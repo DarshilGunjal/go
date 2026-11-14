@@ -18,7 +18,7 @@
       "TestHelloWorld"
     ],
     "failed_tests": [],
-    "output": "=== RUN   TestHelloWorld\n--- PASS: TestHelloWorld (0.00s)\nPASS\nok  \tgreeting\t0.421s"
+    "output": "=== RUN   TestHelloWorld\n--- PASS: TestHelloWorld (0.00s)\nPASS\nok  \tgreeting\t0.435s"
   },
   "checks": [
     {
